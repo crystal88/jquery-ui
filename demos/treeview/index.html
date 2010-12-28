@@ -1,0 +1,66 @@
+
+<!-- saved from url=(0061)file:///media/private/javascript/jquery-ui-example/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+	<title>jQuery UI Examples by Crystal</title>
+	<link rel="stylesheet" href="../../themes/base/jquery.ui.all.css">
+	<script src="../../jquery-1.4.4.js"></script>
+	<script src="../../ui/jquery.ui.core.js"></script>
+	<script src="../../ui/jquery.ui.widget.js"></script>
+	<script src="../../ui/jquery.ui.treeview.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		
+		$('#tree').checkboxtree();
+		
+		$('#tree').checkboxtree('sg');
+	});
+	</script>  
+</head>
+<body>
+<div style="width: 50%; font-size: 70%">
+	
+	<div id="tree" style="margin-left: -10px">
+		<h1>Custom tree view</h1>
+		<ul>
+			<li>
+				<input type="checkbox" name="main item 01"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">main item 01</a>
+				<ul>
+					<li><input type="checkbox"><a>sub item 01 01</a></li>
+					<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub item 01 02" checked="yes"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub item 01 02</a></li>
+					<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub item 01 03"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub item 01 03</a></li>
+					<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub item 01 04"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub item 01 04</a></li>
+				</ul>
+			</li>
+			
+			<li style="list-style-type:none; list-style-position:inside; margin-left: -10px">
+				<span class="ui-icon ui-icon-carat-1-e" style="display:inline-block; margin-left: -16px; cursor:pointer"></span><input type="checkbox" name="main item 02" checked="yes"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">main item 02</a>
+				<ul>
+					<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub item 02 01"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub item 02 01</a></li>
+					<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><span class="ui-icon ui-icon-carat-1-e" style="display:inline-block; margin-left: -16px; cursor:pointer"></span><input type="checkbox" name="sub item 02 02"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub item 02 02</a>
+						<ul>
+							<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub ssub 02 02 01" checked="yes"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub ssub 02 02 01</a></li>
+							<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub ssub 02 02 02"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub ssub 02 02 02</a></li>
+							<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub ssub 02 02 03" checked="yes"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub ssub 02 02 03</a></li>
+						</ul>
+					</li>
+					<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub item 02 03"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub item 02 03</a></li>
+					<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub item 02 04"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub item 02 04</a></li>
+				</ul>
+			</li>
+			<li style="list-style-type:none; list-style-position:inside; margin-left: -10px">
+				<span class="ui-icon ui-icon-carat-1-e" style="display:inline-block; margin-left: -16px; cursor:pointer"></span><input type="checkbox" name="main item 03"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">main item 03</a>
+				<ul>
+					<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub item 03 01"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub item 03 01</a></li>
+					<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub item 03 02"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub item 03 02</a></li>
+					<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub item 03 03"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub item 03 03</a></li>
+					<li style="list-style-type:none; list-style-position:inside; margin-left: -10px"><input type="checkbox" name="sub item 03 04"><a class="ui-priority-primary" style="text-decoration:none; bottom: 3px; position: relative; cursor:pointer">sub item 03 04</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>	
+
+</div>
+
+
+
+</body></html>
