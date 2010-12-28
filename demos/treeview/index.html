@@ -3,6 +3,7 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
 	<title>jQuery UI Examples by Crystal</title>
 	<link rel="stylesheet" href="../../themes/base/jquery.ui.all.css">
+	<link rel="stylesheet" href="../../themes/base/jquery.ui.treeview.css">
 	<script src="../../jquery-1.4.4.js"></script>
 	<script src="../../ui/jquery.ui.core.js"></script>
 	<script src="../../ui/jquery.ui.widget.js"></script>
@@ -10,50 +11,51 @@
 	<script type="text/javascript">
 	$(function(){
 		
-		$('#tree').treeview();
+		$('#tree').treeview({
+				'checkable' : true
+		});
 		
-		$('#tree').treeview('sg', 'B');
 	});
 	</script>  
 </head>
 <body>
-<div style="width: 50%; font-size: 70%">
+<div style="width: 30%; margin-left: 150px; margin-top: 50px; font-size: 80%">
 	
 	<div id="tree">
 		<h1>Custom tree view</h1>
 		<ul>
 			<li>
-				<input type="checkbox"><a>main item 01</a>
+				<a>main item 01</a>
 				<ul>
-					<li><input type="checkbox"><a>sub item 01 01</a></li>
-					<li><input type="checkbox" checked="yes"><a>sub item 01 02</a></li>
-					<li><input type="checkbox"><a>sub item 01 03</a></li>
-					<li><input type="checkbox"><a>sub item 01 04</a></li>
+					<li><a>sub item 01 01</a></li>
+					<li data-checked="yes"><a>sub item 01 02</a></li>
+					<li><a>sub item 01 03</a></li>
+					<li><a>sub item 01 04</a></li>
 				</ul>
 			</li>
 			
 			<li>
-				<input type="checkbox" checked="yes"><a>main item 02</a>
+				<a>main item 02</a>
 				<ul>
-					<li><input type="checkbox"><a>sub item 02 01</a></li>
-					<li><input type="checkbox"><a>sub item 02 02</a>
+					<li><a>sub item 02 01</a></li>
+					<li><a>sub item 02 02</a>
 						<ul>
-							<li><input type="checkbox" checked="yes"><a>sub ssub 02 02 01</a></li>
-							<li><input type="checkbox"><a>sub ssub 02 02 02</a></li>
-							<li><input type="checkbox" checked="yes"><a>sub ssub 02 02 03</a></li>
+							<li data-checked="yes"><a>sub ssub 02 02 01</a></li>
+							<li><a>sub ssub 02 02 02</a></li>
+							<li data-checked="true"><a>sub ssub 02 02 03</a></li>
 						</ul>
 					</li>
-					<li><input type="checkbox" name="sub item 02 03"><a>sub item 02 03</a></li>
-					<li><input type="checkbox" name="sub item 02 04"><a>sub item 02 04</a></li>
+					<li><a>sub item 02 03</a></li>
+					<li><a>sub item 02 04</a></li>
 				</ul>
 			</li>
 			<li>
-				<input type="checkbox"><a>main item 03</a>
+				<a>main item 03</a>
 				<ul>
-					<li><input type="checkbox"><a>sub item 03 01</a></li>
-					<li><input type="checkbox"><a>sub item 03 02</a></li>
-					<li><input type="checkbox"><a>sub item 03 03</a></li>
-					<li><input type="checkbox" name="sub item 03 04"><a>sub item 03 04</a></li>
+					<li><a>sub item 03 01</a></li>
+					<li><a>sub item 03 02</a></li>
+					<li><a>sub item 03 03</a></li>
+					<li><a>sub item 03 04</a></li>
 				</ul>
 			</li>
 		</ul>
