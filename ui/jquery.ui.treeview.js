@@ -1,4 +1,6 @@
-$.widget("ui.treeview", {
+(function ($) {
+	
+	$.widget("ui.treeview", {
 
 	'rootNodes' : {},
 	
@@ -33,6 +35,7 @@ $.widget("ui.treeview", {
 					$('a', this).each((function(parent) {
 						return function() {
 							if (this.parentNode == parent) {
+								$(this).attr('class','ui-priority-primary');
 								$(this).attr('style', 'text-decoration:none; bottom: 3px; position: relative; cursor:pointer');								
 								$(this).click(treeview.createClickListener(parent, treeview));
 							}
@@ -76,6 +79,8 @@ $.widget("ui.treeview", {
 	'sg' : function(a) {
 		console.log('hello: '+a);
 	}
-});
+})
+
+})(jQuery);
 
 
