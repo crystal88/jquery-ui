@@ -2,7 +2,7 @@
 	
 	$.widget("ui.treeview", {
 
-	'rootNodes' : {},
+	'rootNode' : null,
 	
 	'currentSelection' : null,
 	
@@ -13,14 +13,27 @@
 	
 	'_init' : function(options) {
 		this.options = $.extend(this.options, options);
-		
-		domelem = this.element[0];
+		var domelem = this.element[0];
+		this.rootNode = domelem;
 		domelem.setAttribute('class', 'ui-widget ui-widget-content ui-corner-all');
 		$('h1', domelem).attr('class', 'ui-widget-header ui-corner-all ui-helper-reset-ui-helper-clearfix');
 		$('h1', domelem).attr('style', 'font-size: 100%; margin-top: 2px');
-		treeview = this;
-		this.init(domelem, this.rootNodes);
-		$('ul li ul', domelem).hide();
+		this.init(domelem);
+		this.initOpen(this.rootNode);
+	},
+	
+	'initOpen' : function(rootNode) {
+		var treeview = this;
+		$('> ul > li', rootNode).each(function(){
+			var isOpen = $(this).attr('data-open');
+			console.log(isOpen);
+			if (isOpen == 'true' || isOpen == 'yes' || isOpen == '1') {
+				$('> ul', this).show();
+			} else {
+				$('> ul', this).hide();
+			}
+			treeview.initOpen(this);
+		})
 	},
 	
 	'isChecked' : function(liElem) {
@@ -28,22 +41,17 @@
 		return chval === 'yes' || chval === 'true' || chval == '1';
 	},
 	
-	'init' : function(domelem, container) {
+	'init' : function(domelem) {
 		var treeview = this;
-		container['children'] = {};
 		
-		$('ul > li', domelem).each((function(nodecont) {
-		
-			return function() {
+		$('ul > li', domelem).each(function() {
 				if (this.parentNode.parentNode == domelem) {
 					parent = this;
-					$('> input', this).each(function(){
-						nodecont[$(this).attr('name')] = $(this).val();
-					});
 					if (treeview.options.checkable) {
 						$(this).prepend('<input type="checkbox"/>');
 						if (treeview.isChecked($(this))) {
 							$('input', this).attr('checked', 'yes');
+							$(this).attr('data-checked', 'true');
 						}
 						if (treeview.options.autoCheckChildNodes) {
 							$('input', this).click(function(){
@@ -71,9 +79,10 @@
 					})(parent)
 					
 					)
-					treeview.init(this, nodecont);
+					node = {'element' : this};
+					treeview.init(this);
 				}
-		}})(container['children']));
+		});
 		$(domelem).attr('style', 'list-style-type:none; list-style-position:inside; margin-left: -10px');
 	},
 	
@@ -97,10 +106,10 @@
 	
 	'changeSelection' : function(newSel) {
 		var selectionClass = 'ui-state-focus';
-		if (treeview.currentSelection != null) {
-			treeview.currentSelection.removeClass(selectionClass);
+		if (this.currentSelection != null) {
+			this.currentSelection.removeClass(selectionClass);
 		}
-		treeview.currentSelection = newSel;
+		this.currentSelection = newSel;
 		//treeview.currentSelection.addClass(selectionClass);
 	},
 	
